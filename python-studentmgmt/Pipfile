@@ -4,11 +4,14 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-pylint = "*"
 
 [packages]
 flask = "*"
-marshmallow = "*"
+flask-marshmallow = "*"
+flask-sqlalchemy = "*"
+psycopg2 = "*"
+sqlalchemy = "*"
+marshmallow-sqlalchemy = "*"
 
 [requires]
 python_version = "3.6"

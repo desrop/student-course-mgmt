@@ -1,0 +1,28 @@
+/courses/<id>
+/courses
+/courses?match-title=
+/courses?starts-before=
+/courses?starts-after=
+
+/courses POST
+/courses/<id> DELETE
+
+/students/<id>
+/students
+/students?match-name
+
+/students POST
+/students/<id> DELETE
+
+/enrollments/student/<id>
+/enrollments/student/1
+/enrollments/course/<id>
+
+/enrollments POST
+    course_id = request.json['course_id']
+    student_id = request.json['student_id']
+
+/enrollments DELETE
+def delete_enrollment():
+    course_id = request.json['course_id']
+    student_id = request.json['student_id']

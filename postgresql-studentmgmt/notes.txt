@@ -1,0 +1,21 @@
+# Set up network for psql and postgres DB to connect
+docker network create studentmgmt-net
+
+# Make PostgreSQL image (contains scripts for DB)
+docker build -t postgresql-studentmgmt .
+
+# Make PostgreSQL Container
+docker run --name studentmgmt-db --network studentmgmt-net -d postgresql-studentmgmt
+
+# Run psql interactively (plain postgres)
+docker run -it --rm --network studentmgmt-net postgres psql -h studentmgmt-db -U studentmgmt
+
+# Once container is solid:
+docker start studentmgmt-db
+docker stop studentmgmt-db
+
+
+
+docker network connect student-net studentdb
+docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword  -d postgres
+docker run -it --rm --network some-network postgres psql -h some-postgres -U postgres

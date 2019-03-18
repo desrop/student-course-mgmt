@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+
+  studentmgmt-db:
+    build: ./postgresql-studentmgmt
+    image: postgresql-studentmgmt
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: c5d5571d196b48272070c97c2d103041
+
+  studentmgmt-web:
+    build: ./python-studentmgmt
+    image: python-studentmgmt
+    depends_on:
+      - studentmgmt-db
+    ports:
+      - "5000:5000"
+    volumes:
+      - ~/pythonproj/student-course-mgmt-project/python-studentmgmt:/usr/src/app
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
