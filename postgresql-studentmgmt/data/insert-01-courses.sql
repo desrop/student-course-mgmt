@@ -13,5 +13,5 @@ INSERT INTO course (
 INSERT INTO course (
     course_id, course_num, title, description, start_dt
 ) VALUES (
-    3, 'BWV-207', 'Intermediate Latch Hooking', 'This course will explain how to use bits of yarn to make a rug.', to_date('20190905','YYYYMMDD')
+    3, 'BWV-207', 'Intermediate Latch Hooking', 'This course will explain how to use bits of yarn to make a rug.', to_date('20190906','YYYYMMDD')
 );
