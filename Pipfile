@@ -6,12 +6,6 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-flask = "*"
-flask-marshmallow = "*"
-flask-sqlalchemy = "*"
-psycopg2 = "*"
-sqlalchemy = "*"
-marshmallow-sqlalchemy = "*"
 flask-cors = "*"
 
 [requires]
